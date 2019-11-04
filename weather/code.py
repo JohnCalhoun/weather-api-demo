@@ -14,7 +14,7 @@ class API():
 
             zip_code="75094"
 
-            # Load API from a config file ie DONT PUT IN CODE
+            # Load API from a config file because DONT PUT IN CODE!
             with open("./config.yml", 'r') as ymlfile:
                 cfg = yaml.safe_load(ymlfile)
 
@@ -65,7 +65,9 @@ class API():
         # Arguments
         path (str): the path in the api to send to eg. weather or forecast
         params (dict): additional params to be sent of url params in the request
-        
+       
+        # Returns
+        The raw JSON results returned as a nested dict object.
         """
         return self._request(path,params)
 

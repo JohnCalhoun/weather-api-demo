@@ -55,16 +55,11 @@
             
     <li class="toctree-l2"><a href="#weather-api-demo">weather-api-demo</a></li>
     
-
-    <li class="toctree-l2"><a href="#setup">Setup</a></li>
-    
         <ul>
         
             <li><a class="toctree-l3" href="#install">Install</a></li>
         
-            <li><a class="toctree-l3" href="#configure">Configure</a></li>
-        
-            <li><a class="toctree-l3" href="#example">Example</a></li>
+            <li><a class="toctree-l3" href="#usage">Usage</a></li>
         
             <li><a class="toctree-l3" href="#docs">Docs</a></li>
         
@@ -114,27 +109,31 @@
             <div class="section">
               
                 <h1 id="weather-api-demo">weather-api-demo</h1>
-<h1 id="setup">Setup</h1>
+<p>This is a small python library for interacting with the OpenWeather APIs. Currently the high level api supports the current weather and 5 day forecast endpoints (which are free) and the lower level request api can access the other endpoints.</p>
+<p>for more info on the full OpenWeather API see <a href="https://openweathermap.org/api">here</a></p>
 <h2 id="install">Install</h2>
+<pre><code class="bash">pip3 install git+https://github.com/JohnCalhoun/weather-api-demo.git
+</code></pre>
+
+<p>to setup local dev environment run:</p>
 <pre><code class="bash">git clone https://github.com/JohnCalhoun/weather-api-demo.git
 cd weather-api-demo
 make init
 cp config.yml.example config.yml
 </code></pre>
 
-<h2 id="configure">Configure</h2>
-<ul>
-<li>create open weather account and get an API Key
-https://openweathermap.org/guide</li>
-<li>open config.yml and replace <code>put_your_key_here</code> with your api key</li>
-</ul>
-<h2 id="example">Example</h2>
-<pre><code class="bash">./example.py
+<p>then create OpenWeather account and get an API Key <a href="https://openweathermap.org/guide">Instructions</a>. Finally, open config.yml and replace <code>put_your_key_here</code> with your api key. The API key is loaded in the unit tests and example.py scripts.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class="bash">from weather import API
+api=API(&quot;your-api-key-here&quot;)
+print(api.current(zip_code=&quot;75094&quot;))
 </code></pre>
 
+<p>for a more involved example see example.py</p>
 <h2 id="docs">Docs</h2>
-<p>see <a href="./docs/markdown/doc.md">here</a> for details </p>
+<p>see <a href="http://weather-api-demo.s3-website-us-east-1.amazonaws.com/">here</a> for details </p>
 <h2 id="tests">Tests</h2>
+<p>Unit tests are located in the ./tests folder and can be run by:</p>
 <pre><code class="bash">make tests
 </code></pre>
               
@@ -185,5 +184,5 @@ https://openweathermap.org/guide</li>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-04 15:15:59
+Build Date UTC : 2019-11-04 19:10:19
 -->

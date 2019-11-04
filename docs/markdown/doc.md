@@ -15,7 +15,7 @@ Main class for accessing OpenWeather API
 
     zip_code="75094"
 
-    # Load API from a config file ie DONT PUT IN CODE
+    # Load API from a config file because DONT PUT IN CODE!
     with open("./config.yml", 'r') as ymlfile:
         cfg = yaml.safe_load(ymlfile)
 
@@ -39,6 +39,9 @@ __Arguments__
 - __path (str)__: the path in the api to send to eg. weather or forecast
 - __params (dict)__: additional params to be sent of url params in the request
 
+__Returns__
+
+The raw JSON results returned as a nested dict object.
 
 <h3 id="weather.API.current">current</h3>
 

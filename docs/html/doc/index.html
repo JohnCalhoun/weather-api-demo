@@ -106,7 +106,7 @@
 
     zip_code=&quot;75094&quot;
 
-    # Load API from a config file ie DONT PUT IN CODE
+    # Load API from a config file because DONT PUT IN CODE!
     with open(&quot;./config.yml&quot;, 'r') as ymlfile:
         cfg = yaml.safe_load(ymlfile)
 
@@ -130,6 +130,8 @@
 <li><strong>path (str)</strong>: the path in the api to send to eg. weather or forecast</li>
 <li><strong>params (dict)</strong>: additional params to be sent of url params in the request</li>
 </ul>
+<p><strong>Returns</strong></p>
+<p>The raw JSON results returned as a nested dict object.</p>
 <h3 id="weather.API.current">current</h3>
 
 <pre><code class="python">API.current(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
