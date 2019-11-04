@@ -101,6 +101,20 @@
 </code></pre>
 
 <p>Main class for accessing OpenWeather API</p>
+<pre><code class="python">    from weather import API
+    import yaml
+
+    zip_code=&quot;75094&quot;
+
+    # Load API from a config file ie DONT PUT IN CODE
+    with open(&quot;./config.yml&quot;, 'r') as ymlfile:
+        cfg = yaml.safe_load(ymlfile)
+
+    api=API(cfg[&quot;API_KEY&quot;])
+
+    current=api.current(zip_code=zip_code)
+</code></pre>
+
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>api_key (str)</strong>: API key for OpenWeather.</li>

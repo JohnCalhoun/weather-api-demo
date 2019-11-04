@@ -20,6 +20,9 @@ https://openweathermap.org/guide
 ./example.py
 ```
 
+## Docs
+see [./docs/markdown/doc.md](here) for details 
+
 ## Tests
 ```bash
 make tests
