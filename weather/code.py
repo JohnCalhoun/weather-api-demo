@@ -1,7 +1,17 @@
+"""
+This module implements an API for accessing weather data from OpenWeather
+"""
 import requests
 from urllib.parse import urlencode
 
 class API():
+    """
+        Main class for accessing OpenWeather API 
+        # Arguments 
+        api_key (str): API key for OpenWeather. 
+        units (str): standard, metric, or imperial (default)
+    """
+
     def __init__(self,api_key,units="imperial"):
         self.api_key=api_key
         self.units=units
@@ -36,6 +46,11 @@ class API():
         return data
        
     def request(self,path,params):
+        """
+        # Arguments
+        path (str): the path in the api to send to eg. weather or forecast
+        params (dict): additional params to be sent of url params in the request
+        """
         return self._request(path,params)
 
     def current(self,zip_code=None,city_name=None,city_id=None,lat_lon=None,country_code="us"):

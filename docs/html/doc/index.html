@@ -94,6 +94,28 @@
             <div class="section">
               
                 <h1 id="weather">weather</h1>
+
+<h2 id="weather.API">API</h2>
+
+<pre><code class="python">API(self, api_key, units='imperial')
+</code></pre>
+
+<p>Main class for accessing OpenWeather API
+<strong>Arguments</strong></p>
+<ul>
+<li><strong>api_key (str)</strong>: API key for OpenWeather.</li>
+<li><strong>units (str)</strong>: standard, metric, or imperial (default)</li>
+</ul>
+<h3 id="weather.API.request">request</h3>
+
+<pre><code class="python">API.request(self, path, params)
+</code></pre>
+
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>path (str)</strong>: the path in the api to send to eg. weather or forecast</li>
+<li><strong>params (dict)</strong>: additional params to be sent of url params in the request</li>
+</ul>
               
             </div>
           </div>
