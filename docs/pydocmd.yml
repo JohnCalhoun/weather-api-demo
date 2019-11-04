@@ -15,7 +15,7 @@ generate:
 # This configuration is not mandatory if you have your own mkdocs.yml config file.
 pages:
 - Home: index.md << ../README.md
-- Docs: doc.md
+- API Methods: doc.md
 
 # These options all show off their default values. You don't have to add
 # them to your configuration if you're fine with the default.

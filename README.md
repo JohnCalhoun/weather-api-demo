@@ -20,6 +20,7 @@ then create OpenWeather account and get an API Key [Instructions](https://openwe
 ## Usage
 ```bash
 from weather import API
+
 api=API("your-api-key-here")
 print(api.current(zip_code="75094"))
 ```

@@ -73,7 +73,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="doc/">Docs</a>
+    <a class="" href="doc/">API Methods</a>
 	    </li>
           
         </ul>
@@ -125,6 +125,7 @@ cp config.yml.example config.yml
 <p>then create OpenWeather account and get an API Key <a href="https://openweathermap.org/guide">Instructions</a>. Finally, open config.yml and replace <code>put_your_key_here</code> with your api key. The API key is loaded in the unit tests and example.py scripts.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class="bash">from weather import API
+
 api=API(&quot;your-api-key-here&quot;)
 print(api.current(zip_code=&quot;75094&quot;))
 </code></pre>
@@ -143,7 +144,7 @@ print(api.current(zip_code=&quot;75094&quot;))
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="doc/" class="btn btn-neutral float-right" title="Docs">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="doc/" class="btn btn-neutral float-right" title="API Methods">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -184,5 +185,5 @@ print(api.current(zip_code=&quot;75094&quot;))
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-04 19:10:19
+Build Date UTC : 2019-11-04 19:13:21
 -->
