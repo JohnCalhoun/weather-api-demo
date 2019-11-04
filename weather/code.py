@@ -31,7 +31,8 @@ class API():
         url=self.url_base+"/"+path+"?"+urlencode(_params)
         r=requests.get(url)
         data=r.json()
-        if data.get("cod",None)=='404':
+        print(url)
+        if str(data.get("cod",None))!='200':
             raise Exception(data.get("message",data.get("cod")))
         return data
        
@@ -44,4 +45,4 @@ class API():
 
     def forecast(self,zip_code=None,city_name=None,city_id=None,lat_lon=None,country_code="us"):
         params=self._params(zip_code,city_name,city_id,lat_lon,country_code)
-        return self._request("forecast",params)
+        return self._request("forecast",params)["list"]

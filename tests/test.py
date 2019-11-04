@@ -12,6 +12,7 @@ class WeatherMethods(unittest.TestCase):
     
     def test_current(self):
         result=self.api.current(zip_code="75094")
+        print(result)
 
     def test_forecast(self):
         result=self.api.forecast(zip_code="75094")
@@ -26,5 +27,5 @@ class WeatherMethods(unittest.TestCase):
         result=self.api.forecast(lat_lon=["35","139"])
     
     def test_request(self):
-        result=self.api.request("weather",{"zip_code":"75094"})
+        result=self.api.request("weather",{"zip":"75094,us"})
         
