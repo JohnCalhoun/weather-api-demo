@@ -21,7 +21,7 @@ https://openweathermap.org/guide
 ```
 
 ## Docs
-see [./docs/markdown/doc.md](here) for details 
+see [here](./docs/markdown/doc.md) for details 
 
 ## Tests
 ```bash
