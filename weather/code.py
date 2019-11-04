@@ -85,7 +85,7 @@ class API():
         country_code (str): example 'us' or 'uk'
 	
         # Returns
-        ``json
+        ```json
             {
               "coord": {
                 "lon": -122.08,
@@ -168,7 +168,7 @@ class API():
                 "sys":{"pod":"d"},
                 "dt_txt":"2014-07-23 09:00:00"
             }]
-        ```json
+        ```
         """
 
         params=self._params(zip_code,city_name,city_id,lat_lon,country_code)
