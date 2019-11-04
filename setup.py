@@ -13,7 +13,7 @@ setup(
     license = "BSD",
     keywords = "OpenWeather",
     url = "https://github.com/JohnCalhoun/weather-api-demo",
-    packages=['requests'],
+    install_requires=['requests'],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
