@@ -7,6 +7,7 @@ from urllib.parse import urlencode
 class API():
     """
         Main class for accessing OpenWeather API 
+        
         # Arguments 
         api_key (str): API key for OpenWeather. 
         units (str): standard, metric, or imperial (default)
@@ -54,9 +55,38 @@ class API():
         return self._request(path,params)
 
     def current(self,zip_code=None,city_name=None,city_id=None,lat_lon=None,country_code="us"):
+        """
+        get the current weather for a location. Must specifiy one of the following combinations:
+        - zip_code and country_code
+        - city_name and country_code
+        - city_id
+        - lat_lon
+
+        # Arguments
+        zip_code (str): zip code of location
+        city_name (str): name of the City such as 'London'
+        city_id (str): OpenWeather city ID
+        lat_lon (array of str): the first item is the latatude and the second is the longitude
+        country_code (str): example 'us' or 'uk'
+        """
         params=self._params(zip_code,city_name,city_id,lat_lon,country_code)
         return self._request("weather",params)
 
     def forecast(self,zip_code=None,city_name=None,city_id=None,lat_lon=None,country_code="us"):
+        """
+        get the 5 day, 3 hour forecast a location. Must specifiy one of the following combinations:
+        - zip_code and country_code
+        - city_name and country_code
+        - city_id
+        - lat_lon
+
+        # Arguments
+        zip_code (str): zip code of location
+        city_name (str): name of the City such as 'London'
+        city_id (str): OpenWeather city ID
+        lat_lon (array of str): the first item is the latatude and the second is the longitude
+        country_code (str): example 'us' or 'uk'
+        """
+
         params=self._params(zip_code,city_name,city_id,lat_lon,country_code)
         return self._request("forecast",params)["list"]

@@ -100,8 +100,8 @@
 <pre><code class="python">API(self, api_key, units='imperial')
 </code></pre>
 
-<p>Main class for accessing OpenWeather API
-<strong>Arguments</strong></p>
+<p>Main class for accessing OpenWeather API</p>
+<p><strong>Arguments</strong></p>
 <ul>
 <li><strong>api_key (str)</strong>: API key for OpenWeather.</li>
 <li><strong>units (str)</strong>: standard, metric, or imperial (default)</li>
@@ -115,6 +115,42 @@
 <ul>
 <li><strong>path (str)</strong>: the path in the api to send to eg. weather or forecast</li>
 <li><strong>params (dict)</strong>: additional params to be sent of url params in the request</li>
+</ul>
+<h3 id="weather.API.current">current</h3>
+
+<pre><code class="python">API.current(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
+</code></pre>
+
+<p>get the current weather for a location. Must specifiy one of the following combinations:
+- zip_code and country_code
+- city_name and country_code
+- city_id
+- lat_lon</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>zip_code (str)</strong>: zip code of location</li>
+<li><strong>city_name (str)</strong>: name of the City such as 'London'</li>
+<li><strong>city_id (str)</strong>: OpenWeather city ID</li>
+<li><strong>lat_lon (array of str)</strong>: the first item is the latatude and the second is the longitude</li>
+<li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
+</ul>
+<h3 id="weather.API.forecast">forecast</h3>
+
+<pre><code class="python">API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
+</code></pre>
+
+<p>get the 5 day, 3 hour forecast a location. Must specifiy one of the following combinations:
+- zip_code and country_code
+- city_name and country_code
+- city_id
+- lat_lon</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>zip_code (str)</strong>: zip code of location</li>
+<li><strong>city_name (str)</strong>: name of the City such as 'London'</li>
+<li><strong>city_id (str)</strong>: OpenWeather city ID</li>
+<li><strong>lat_lon (array of str)</strong>: the first item is the latatude and the second is the longitude</li>
+<li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
 </ul>
               
             </div>
