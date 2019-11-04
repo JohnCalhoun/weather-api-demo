@@ -65,6 +65,7 @@ class API():
         # Arguments
         path (str): the path in the api to send to eg. weather or forecast
         params (dict): additional params to be sent of url params in the request
+        
         """
         return self._request(path,params)
 
@@ -82,6 +83,53 @@ class API():
         city_id (str): OpenWeather city ID
         lat_lon (array of str): the first item is the latatude and the second is the longitude
         country_code (str): example 'us' or 'uk'
+	
+        # Returns
+        ``json
+            {
+              "coord": {
+                "lon": -122.08,
+                "lat": 37.39
+              },
+              "weather": [
+                {
+                  "id": 800,
+                  "main": "Clear",
+                  "description": "clear sky",
+                  "icon": "01d"
+                }
+              ],
+              "base": "stations",
+              "main": {
+                "temp": 296.71,
+                "pressure": 1013,
+                "humidity": 53,
+                "temp_min": 294.82,
+                "temp_max": 298.71
+              },
+              "visibility": 16093,
+              "wind": {
+                "speed": 1.5,
+                "deg": 350
+              },
+              "clouds": {
+                "all": 1
+              },
+              "dt": 1560350645,
+              "sys": {
+                "type": 1,
+                "id": 5122,
+                "message": 0.0139,
+                "country": "US",
+                "sunrise": 1560343627,
+                "sunset": 1560396563
+              },
+              "timezone": -25200,
+              "id": 420006353,
+              "name": "Mountain View",
+              "cod": 200
+            }
+        ```
         """
         params=self._params(zip_code,city_name,city_id,lat_lon,country_code)
         return self._request("weather",params)
@@ -100,6 +148,27 @@ class API():
         city_id (str): OpenWeather city ID
         lat_lon (array of str): the first item is the latatude and the second is the longitude
         country_code (str): example 'us' or 'uk'
+
+        # Returns
+        ```json
+			[{
+                "dt":1406106000,
+                "main":{
+                    "temp":298.77,
+                    "temp_min":298.77,
+                    "temp_max":298.774,
+                    "pressure":1005.93,
+                    "sea_level":1018.18,
+                    "grnd_level":1005.93,
+                    "humidity":87,
+                    "temp_kf":0.26},
+                "weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],
+                "clouds":{"all":88},
+                "wind":{"speed":5.71,"deg":229.501},
+                "sys":{"pod":"d"},
+                "dt_txt":"2014-07-23 09:00:00"
+            }]
+        ```json
         """
 
         params=self._params(zip_code,city_name,city_id,lat_lon,country_code)

@@ -39,6 +39,7 @@ __Arguments__
 - __path (str)__: the path in the api to send to eg. weather or forecast
 - __params (dict)__: additional params to be sent of url params in the request
 
+
 <h3 id="weather.API.current">current</h3>
 
 ```python
@@ -59,6 +60,54 @@ __Arguments__
 - __lat_lon (array of str)__: the first item is the latatude and the second is the longitude
 - __country_code (str)__: example 'us' or 'uk'
 
+__Returns__
+
+``json
+    {
+`"coord"`: {
+`"lon"`: -122.08,
+`"lat"`: 37.39
+      },
+`"weather"`: [
+        {
+`"id"`: 800,
+`"main"`: "Clear",
+`"description"`: "clear sky",
+`"icon"`: "01d"
+        }
+      ],
+`"base"`: "stations",
+`"main"`: {
+`"temp"`: 296.71,
+`"pressure"`: 1013,
+`"humidity"`: 53,
+`"temp_min"`: 294.82,
+`"temp_max"`: 298.71
+      },
+`"visibility"`: 16093,
+`"wind"`: {
+`"speed"`: 1.5,
+`"deg"`: 350
+      },
+`"clouds"`: {
+`"all"`: 1
+      },
+`"dt"`: 1560350645,
+`"sys"`: {
+`"type"`: 1,
+`"id"`: 5122,
+`"message"`: 0.0139,
+`"country"`: "US",
+`"sunrise"`: 1560343627,
+`"sunset"`: 1560396563
+      },
+`"timezone"`: -25200,
+`"id"`: 420006353,
+`"name"`: "Mountain View",
+`"cod"`: 200
+    }
+```
+
 <h3 id="weather.API.forecast">forecast</h3>
 
 ```python
@@ -78,4 +127,26 @@ __Arguments__
 - __city_id (str)__: OpenWeather city ID
 - __lat_lon (array of str)__: the first item is the latatude and the second is the longitude
 - __country_code (str)__: example 'us' or 'uk'
+
+__Returns__
+
+```json
+[{
+        "dt":1406106000,
+        "main":{
+            "temp":298.77,
+            "temp_min":298.77,
+            "temp_max":298.774,
+            "pressure":1005.93,
+            "sea_level":1018.18,
+            "grnd_level":1005.93,
+            "humidity":87,
+            "temp_kf":0.26},
+        "weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],
+        "clouds":{"all":88},
+        "wind":{"speed":5.71,"deg":229.501},
+        "sys":{"pod":"d"},
+        "dt_txt":"2014-07-23 09:00:00"
+    }]
+```json
 

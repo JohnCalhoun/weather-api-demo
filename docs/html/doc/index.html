@@ -148,9 +148,23 @@
 <li><strong>lat_lon (array of str)</strong>: the first item is the latatude and the second is the longitude</li>
 <li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
 </ul>
-<h3 id="weather.API.forecast">forecast</h3>
+<p><strong>Returns</strong></p>
+<p><code>`json
+    {</code>"coord"<code>: {</code>"lon"<code>: -122.08,</code>"lat"<code>: 37.39
+      },</code>"weather"<code>: [
+        {</code>"id"<code>: 800,</code>"main"<code>: "Clear",</code>"description"<code>: "clear sky",</code>"icon"<code>: "01d"
+        }
+      ],</code>"base"<code>: "stations",</code>"main"<code>: {</code>"temp"<code>: 296.71,</code>"pressure"<code>: 1013,</code>"humidity"<code>: 53,</code>"temp_min"<code>: 294.82,</code>"temp_max"<code>: 298.71
+      },</code>"visibility"<code>: 16093,</code>"wind"<code>: {</code>"speed"<code>: 1.5,</code>"deg"<code>: 350
+      },</code>"clouds"<code>: {</code>"all"<code>: 1
+      },</code>"dt"<code>: 1560350645,</code>"sys"<code>: {</code>"type"<code>: 1,</code>"id"<code>: 5122,</code>"message"<code>: 0.0139,</code>"country"<code>: "US",</code>"sunrise"<code>: 1560343627,</code>"sunset"<code>: 1560396563
+      },</code>"timezone"<code>: -25200,</code>"id"<code>: 420006353,</code>"name"<code>: "Mountain View",</code>"cod"`: 200
+    }</p>
+<pre><code>
+&lt;h3 id=&quot;weather.API.forecast&quot;&gt;forecast&lt;/h3&gt;
 
-<pre><code class="python">API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
+```python
+API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
 </code></pre>
 
 <p>get the 5 day, 3 hour forecast a location. Must specifiy one of the following combinations:
@@ -166,6 +180,25 @@
 <li><strong>lat_lon (array of str)</strong>: the first item is the latatude and the second is the longitude</li>
 <li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
 </ul>
+<p><strong>Returns</strong></p>
+<p><code>json
+[{
+        "dt":1406106000,
+        "main":{
+            "temp":298.77,
+            "temp_min":298.77,
+            "temp_max":298.774,
+            "pressure":1005.93,
+            "sea_level":1018.18,
+            "grnd_level":1005.93,
+            "humidity":87,
+            "temp_kf":0.26},
+        "weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],
+        "clouds":{"all":88},
+        "wind":{"speed":5.71,"deg":229.501},
+        "sys":{"pod":"d"},
+        "dt_txt":"2014-07-23 09:00:00"
+    }]</code>json</p>
               
             </div>
           </div>
