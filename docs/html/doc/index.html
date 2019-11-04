@@ -149,22 +149,54 @@
 <li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
 </ul>
 <p><strong>Returns</strong></p>
-<p><code>`json
-    {</code>"coord"<code>: {</code>"lon"<code>: -122.08,</code>"lat"<code>: 37.39
-      },</code>"weather"<code>: [
-        {</code>"id"<code>: 800,</code>"main"<code>: "Clear",</code>"description"<code>: "clear sky",</code>"icon"<code>: "01d"
+<pre><code class="json">    {
+      &quot;coord&quot;: {
+        &quot;lon&quot;: -122.08,
+        &quot;lat&quot;: 37.39
+      },
+      &quot;weather&quot;: [
+        {
+          &quot;id&quot;: 800,
+          &quot;main&quot;: &quot;Clear&quot;,
+          &quot;description&quot;: &quot;clear sky&quot;,
+          &quot;icon&quot;: &quot;01d&quot;
         }
-      ],</code>"base"<code>: "stations",</code>"main"<code>: {</code>"temp"<code>: 296.71,</code>"pressure"<code>: 1013,</code>"humidity"<code>: 53,</code>"temp_min"<code>: 294.82,</code>"temp_max"<code>: 298.71
-      },</code>"visibility"<code>: 16093,</code>"wind"<code>: {</code>"speed"<code>: 1.5,</code>"deg"<code>: 350
-      },</code>"clouds"<code>: {</code>"all"<code>: 1
-      },</code>"dt"<code>: 1560350645,</code>"sys"<code>: {</code>"type"<code>: 1,</code>"id"<code>: 5122,</code>"message"<code>: 0.0139,</code>"country"<code>: "US",</code>"sunrise"<code>: 1560343627,</code>"sunset"<code>: 1560396563
-      },</code>"timezone"<code>: -25200,</code>"id"<code>: 420006353,</code>"name"<code>: "Mountain View",</code>"cod"`: 200
-    }</p>
-<pre><code>
-&lt;h3 id=&quot;weather.API.forecast&quot;&gt;forecast&lt;/h3&gt;
+      ],
+      &quot;base&quot;: &quot;stations&quot;,
+      &quot;main&quot;: {
+        &quot;temp&quot;: 296.71,
+        &quot;pressure&quot;: 1013,
+        &quot;humidity&quot;: 53,
+        &quot;temp_min&quot;: 294.82,
+        &quot;temp_max&quot;: 298.71
+      },
+      &quot;visibility&quot;: 16093,
+      &quot;wind&quot;: {
+        &quot;speed&quot;: 1.5,
+        &quot;deg&quot;: 350
+      },
+      &quot;clouds&quot;: {
+        &quot;all&quot;: 1
+      },
+      &quot;dt&quot;: 1560350645,
+      &quot;sys&quot;: {
+        &quot;type&quot;: 1,
+        &quot;id&quot;: 5122,
+        &quot;message&quot;: 0.0139,
+        &quot;country&quot;: &quot;US&quot;,
+        &quot;sunrise&quot;: 1560343627,
+        &quot;sunset&quot;: 1560396563
+      },
+      &quot;timezone&quot;: -25200,
+      &quot;id&quot;: 420006353,
+      &quot;name&quot;: &quot;Mountain View&quot;,
+      &quot;cod&quot;: 200
+    }
+</code></pre>
 
-```python
-API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
+<h3 id="weather.API.forecast">forecast</h3>
+
+<pre><code class="python">API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
 </code></pre>
 
 <p>get the 5 day, 3 hour forecast a location. Must specifiy one of the following combinations:
@@ -181,24 +213,24 @@ API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, co
 <li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
 </ul>
 <p><strong>Returns</strong></p>
-<p><code>json
-[{
-        "dt":1406106000,
-        "main":{
-            "temp":298.77,
-            "temp_min":298.77,
-            "temp_max":298.774,
-            "pressure":1005.93,
-            "sea_level":1018.18,
-            "grnd_level":1005.93,
-            "humidity":87,
-            "temp_kf":0.26},
-        "weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],
-        "clouds":{"all":88},
-        "wind":{"speed":5.71,"deg":229.501},
-        "sys":{"pod":"d"},
-        "dt_txt":"2014-07-23 09:00:00"
-    }]</code>json</p>
+<pre><code class="json">[{
+        &quot;dt&quot;:1406106000,
+        &quot;main&quot;:{
+            &quot;temp&quot;:298.77,
+            &quot;temp_min&quot;:298.77,
+            &quot;temp_max&quot;:298.774,
+            &quot;pressure&quot;:1005.93,
+            &quot;sea_level&quot;:1018.18,
+            &quot;grnd_level&quot;:1005.93,
+            &quot;humidity&quot;:87,
+            &quot;temp_kf&quot;:0.26},
+        &quot;weather&quot;:[{&quot;id&quot;:804,&quot;main&quot;:&quot;Clouds&quot;,&quot;description&quot;:&quot;overcast clouds&quot;,&quot;icon&quot;:&quot;04d&quot;}],
+        &quot;clouds&quot;:{&quot;all&quot;:88},
+        &quot;wind&quot;:{&quot;speed&quot;:5.71,&quot;deg&quot;:229.501},
+        &quot;sys&quot;:{&quot;pod&quot;:&quot;d&quot;},
+        &quot;dt_txt&quot;:&quot;2014-07-23 09:00:00&quot;
+    }]
+</code></pre>
               
             </div>
           </div>
