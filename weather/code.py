@@ -31,7 +31,6 @@ class API():
         url=self.url_base+"/"+path+"?"+urlencode(_params)
         r=requests.get(url)
         data=r.json()
-        print(url)
         if str(data.get("cod",None))!='200':
             raise Exception(data.get("message",data.get("cod")))
         return data

@@ -12,7 +12,6 @@ class WeatherMethods(unittest.TestCase):
     
     def test_current(self):
         result=self.api.current(zip_code="75094")
-        print(result)
 
     def test_forecast(self):
         result=self.api.forecast(zip_code="75094")
