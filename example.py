@@ -4,12 +4,19 @@ from weather import API
 import yaml
 import unittest
 import time
+import argparse
+
+parser = argparse.ArgumentParser("example.py")
+parser.add_argument("zip_code", 
+    help="the zip code of where you want the weather", type=str)
+args = parser.parse_args()
+zip_code=args.zip_code
 
 with open("./config.yml", 'r') as ymlfile:
     cfg = yaml.safe_load(ymlfile)
+
 api=API(cfg["API_KEY"])
 
-zip_code="75094"
 current=api.current(zip_code=zip_code)
 forecast=api.forecast(zip_code=zip_code)
 
