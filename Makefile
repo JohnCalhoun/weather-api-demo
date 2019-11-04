@@ -7,4 +7,7 @@ test:
 docs: 
 	cd docs; pydocmd build
 
-.PHONY: init test docs
+upload:
+	aws s3 sync docs/html s3://weather-api-demo
+
+.PHONY: init test docs upload
