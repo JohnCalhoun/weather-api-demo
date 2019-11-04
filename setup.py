@@ -14,6 +14,7 @@ setup(
     keywords = "OpenWeather",
     url = "https://github.com/JohnCalhoun/weather-api-demo",
     install_requires=['requests'],
+    packages=["weather"],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
