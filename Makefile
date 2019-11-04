@@ -4,4 +4,7 @@ init:
 test:
 	python3 -m unittest discover tests -v
 
-.PHONY: init test
+docs: 
+	cd docs; pydocmd build
+
+.PHONY: init test docs
