@@ -62,6 +62,17 @@ class API():
        
     def request(self,path,params):
         """
+        Low level API for interacting with OpenWeather endpoints
+
+        the following:
+        ```python
+        api.request("weather",{"zip":"75094,us"})
+        ```
+        is the basically equivalent to 
+        ```python
+        api.current(zip_code="75094")
+        ```
+        
         # Arguments
         path (str): the path in the api to send to eg. weather or forecast
         params (dict): additional params to be sent of url params in the request
@@ -73,7 +84,12 @@ class API():
 
     def current(self,zip_code=None,city_name=None,city_id=None,lat_lon=None,country_code="us"):
         """
-        get the current weather for a location. Must specifiy one of the following combinations:
+        get the current weather for a location. 
+         ```python
+        api.current(zip_code="75094")
+        ```
+        
+        Must specifiy one of the following combinations:
         - zip_code and country_code
         - city_name and country_code
         - city_id
@@ -138,7 +154,12 @@ class API():
 
     def forecast(self,zip_code=None,city_name=None,city_id=None,lat_lon=None,country_code="us"):
         """
-        get the 5 day, 3 hour forecast a location. Must specifiy one of the following combinations:
+        get the 5 day, 3 hour forecast a location. 
+         ```python
+        api.forecast(zip_code="75094")
+        ```
+        
+        Must specifiy one of the following combinations:
         - zip_code and country_code
         - city_name and country_code
         - city_id

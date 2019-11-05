@@ -125,6 +125,15 @@
 <pre><code class="python">API.request(self, path, params)
 </code></pre>
 
+<p>Low level API for interacting with OpenWeather endpoints</p>
+<p>the following:</p>
+<pre><code class="python">api.request(&quot;weather&quot;,{&quot;zip&quot;:&quot;75094,us&quot;})
+</code></pre>
+
+<p>is the basically equivalent to</p>
+<pre><code class="python">api.current(zip_code=&quot;75094&quot;)
+</code></pre>
+
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>path (str)</strong>: the path in the api to send to eg. weather or forecast</li>
@@ -137,21 +146,26 @@
 <pre><code class="python">API.current(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
 </code></pre>
 
-<p>get the current weather for a location. Must specifiy one of the following combinations:
+<p>get the current weather for a location.
+ ```python
+api.current(zip_code="75094")</p>
+<pre><code>
+Must specifiy one of the following combinations:
 - zip_code and country_code
 - city_name and country_code
 - city_id
-- lat_lon</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>zip_code (str)</strong>: zip code of location</li>
-<li><strong>city_name (str)</strong>: name of the City such as 'London'</li>
-<li><strong>city_id (str)</strong>: OpenWeather city ID</li>
-<li><strong>lat_lon (array of str)</strong>: the first item is the latatude and the second is the longitude</li>
-<li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
-</ul>
-<p><strong>Returns</strong></p>
-<pre><code class="json">    {
+- lat_lon
+
+# Arguments
+zip_code (str): zip code of location
+city_name (str): name of the City such as 'London'
+city_id (str): OpenWeather city ID
+lat_lon (array of str): the first item is the latatude and the second is the longitude
+country_code (str): example 'us' or 'uk'
+
+# Returns
+```json
+    {
       &quot;coord&quot;: {
         &quot;lon&quot;: -122.08,
         &quot;lat&quot;: 37.39
@@ -201,21 +215,26 @@
 <pre><code class="python">API.forecast(self, zip_code=None, city_name=None, city_id=None, lat_lon=None, country_code='us')
 </code></pre>
 
-<p>get the 5 day, 3 hour forecast a location. Must specifiy one of the following combinations:
+<p>get the 5 day, 3 hour forecast a location.
+ ```python
+api.forecast(zip_code="75094")</p>
+<pre><code>
+Must specifiy one of the following combinations:
 - zip_code and country_code
 - city_name and country_code
 - city_id
-- lat_lon</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>zip_code (str)</strong>: zip code of location</li>
-<li><strong>city_name (str)</strong>: name of the City such as 'London'</li>
-<li><strong>city_id (str)</strong>: OpenWeather city ID</li>
-<li><strong>lat_lon (array of str)</strong>: the first item is the latatude and the second is the longitude</li>
-<li><strong>country_code (str)</strong>: example 'us' or 'uk'</li>
-</ul>
-<p><strong>Returns</strong></p>
-<pre><code class="json">[{
+- lat_lon
+
+# Arguments
+zip_code (str): zip code of location
+city_name (str): name of the City such as 'London'
+city_id (str): OpenWeather city ID
+lat_lon (array of str): the first item is the latatude and the second is the longitude
+country_code (str): example 'us' or 'uk'
+
+# Returns
+```json
+[{
         &quot;dt&quot;:1406106000,
         &quot;main&quot;:{
             &quot;temp&quot;:298.77,
