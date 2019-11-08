@@ -33,5 +33,5 @@ def info(data):
 
 print("")
 print("Forecast")
-for x in forecast["list"][:4]:
+for x in forecast[:4]:
     print(info(x))
